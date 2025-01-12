@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Interactiva</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
@@ -12,17 +12,17 @@
         <p>Selecciona tu personaje para iniciar:</p>
         
         <button onclick="iniciarJuego('hombre')">
-            <img src="/src/imagenes/hombre.png" alt="Personaje Hombre" width="100">
+            <img src="src/imagenes/hombre.png" alt="Personaje Hombre" width="100">
         </button>
                 
         <button onclick="iniciarJuego('mujer')" id="boton">
-            <img src="/src/imagenes/mujer.png" alt="Personaje Mujer" width="100">
+            <img src="src/imagenes/mujer.png" alt="Personaje Mujer" width="100">
         </button>
     </div>
 
     <script>
         function iniciarJuego(personaje) {            
-            window.location.href = `/html/laberinto.html?personaje=${personaje}`;
+            window.location.href = `html/laberinto.html?personaje=${personaje}`;
         }
     </script>
 </body>

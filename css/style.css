@@ -1,6 +1,6 @@
 body {
     animation: myAnim 1s ease 0s 1 normal forwards;
-    background: url('laberintominigame/src/imagenes/imagebackground.png') center center/cover no-repeat;
+    background: url('/laberintominigame/src/imagenes/imagebackground.png') center center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;

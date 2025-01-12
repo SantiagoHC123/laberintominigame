@@ -43,7 +43,7 @@ body {
   }
   
   #content {
-    background-image: url('laberintominigame/src/imagenes/aphlimgwin.jpg'); /* Asegúrate de tener la imagen en la carpeta o el link correcto */
+    background-image: url('/laberintominigame/src/imagenes/aphlimgwin.jpg'); /* Asegúrate de tener la imagen en la carpeta o el link correcto */
     background-size: cover;
     background-position: center;
     height: 100vh;

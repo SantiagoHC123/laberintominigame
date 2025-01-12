@@ -1,5 +1,5 @@
 body {
-    background-image: url('/laberintominigame/src/imagenes/background1.gif');
+    background-image: url('../laberintominigame/src/imagenes/background1.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

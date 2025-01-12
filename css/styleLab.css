@@ -1,0 +1,173 @@
+body {
+    background-image: url('/src/imagenes/background1.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 20px;
+}
+
+
+
+/* Contenedor del laberinto */
+#maze-container {
+    overflow: hidden;  /* Evita el scroll normal */
+    width: 90vw;       /* 80% del ancho de la pantalla */
+    height: 90vh;      /* 80% del alto de la pantalla */
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Mapa del laberinto que se moverá */
+#maze {
+    background-image: url('/src/imagenes/Grass_Sample.png');
+    display: grid;
+    grid-template-columns: repeat(20, 50px); /* Aumentado para un laberinto 20x20 */
+    gap: 5px;
+    background-color: #ccc;
+    padding: 5px;
+    border: 2px solid #000;
+    position: absolute; /* Permitirá mover el laberinto */
+}
+
+.cell {
+    width: 75px; /* Ajusta al tamaño de tus celdas */
+    height: 75px; /* Ajusta al tamaño de tus celdas */
+    background-size: cover; /* Para que la textura cubra toda la celda */
+    background-position: center; /* Centra la imagen dentro de la celda */
+}
+
+/*
+.grass1 {
+    background-image: url('grass1.png');
+}
+
+.grass2 {
+    background-image: url('grass2.png');
+}
+
+.grass3 {
+    background-image: url('flower1.png');
+}
+*/
+
+/* Otras clases siguen igual */
+.wall {
+    background-image: url('/src/imagenes/roca.png');
+    background-color: transparent;
+    opacity: 0.8; /* Un poco transparente */
+}
+
+.end {
+    background-image: url('/src/imagenes/casa.gif');
+}
+
+model-viewer {
+    width: 50px;   /* Ajusta el tamaño del modelo */
+    height: 50px;  /* Ajusta el tamaño del modelo */
+    background-color: transparent;
+}
+
+
+
+.river {
+    background-image: url('/src/imagenes/agua.gif');
+    background-color: #00f; /* Azul para el río */
+    opacity: 0.8; /* Un poco transparente */
+}
+
+.notifications {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 250px;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.notification-message {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+
+.ganar-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ganar-popup-content {
+    text-align: center;
+}
+
+.ganar-popup-content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #046e04;
+    color: white;
+    cursor: pointer;
+}
+
+.ganar-popup.hidden {
+    display: none;
+}

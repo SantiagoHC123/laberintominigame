@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Web Interactiva</title>
+  <link rel="stylesheet" href="/css/stylebonus.css">
+</head>
+<body>
+  <!-- Ventana emergente -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <p>¡Pum Chulita Sexy!</p>
+      <button onclick="showPage()">OK</button>
+    </div>
+  </div>
+
+  <!-- Contenido de la página -->
+  <div id="content" class="hidden">
+    <div class="message-container">
+      <p class="win-message">¡Ganasteeeeeeeeee!</p>
+      <button id="next-button" onclick="showNextLine()">Continuar</button>
+      <p id="text-line" class="text-line"></p>
+      <div id="final-buttons" class="hidden">
+        <button onclick="answer('Sí')">Sí</button>
+        <button onclick="answer('No')">No</button>
+      </div>
+    </div>
+</div>
+
+  <script src="/js/scriptbonus.js"></script>
+</body>
+</html>

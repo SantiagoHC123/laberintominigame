@@ -1,0 +1,74 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #content {
+    background-image: url('/src/imagenes/aphlimgwin.jpg'); /* Asegúrate de tener la imagen en la carpeta o el link correcto */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+  }
+  
+  .win-message {
+    font-size: 3em;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .message-container {
+    text-align: center;
+  }
+  
+  .win-message {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .text-line {
+    font-size: 1.5em;
+    margin: 20px 0;
+  }

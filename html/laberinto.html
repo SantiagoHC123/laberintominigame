@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <title>Laberinto</title>
+    <link rel="stylesheet" href="/css/styleLab.css">
+</head>
+<body>
+    <h1>Laberinto</h1>
+    <div id="maze-container">   
+        <div id="maze"></div>
+    </div>
+    <div id="notifications" class="notifications"></div>
+    
+    <div id="game-over-popup" class="popup hidden">
+        <div class="popup-content">
+            <p>¡Game Over! Un enemigo te atrapó.</p>
+            <button id="reload-button">Reintentar</button>
+        </div>
+    </div>
+    <div id="ganar-popup" class="ganar-popup hidden">
+        <div class="ganar-popup-content">
+            <p>¡Haz Ganado!</p>
+            <button id="reloadwin-button">Volver a jugar</button>
+        </div>
+    </div>
+    
+    
+    
+    <script src="/js/script.js"></script>
+</body>
+</html>

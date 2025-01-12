@@ -1,5 +1,5 @@
 body {
-    background-image: url('/src/imagenes/background1.gif');
+    background-image: url('laberintominigame/src/imagenes/background1.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,7 +27,7 @@ h1 {
 
 /* Mapa del laberinto que se moverá */
 #maze {
-    background-image: url('/src/imagenes/Grass_Sample.png');
+    background-image: url('laberintominigame/src/imagenes/Grass_Sample.png');
     display: grid;
     grid-template-columns: repeat(20, 50px); /* Aumentado para un laberinto 20x20 */
     gap: 5px;
@@ -60,13 +60,13 @@ h1 {
 
 /* Otras clases siguen igual */
 .wall {
-    background-image: url('/src/imagenes/roca.png');
+    background-image: url('laberintominigame/src/imagenes/roca.png');
     background-color: transparent;
     opacity: 0.8; /* Un poco transparente */
 }
 
 .end {
-    background-image: url('/src/imagenes/casa.gif');
+    background-image: url('laberintominigame/src/imagenes/casa.gif');
 }
 
 model-viewer {
@@ -78,7 +78,7 @@ model-viewer {
 
 
 .river {
-    background-image: url('/src/imagenes/agua.gif');
+    background-image: url('laberintominigame/src/imagenes/agua.gif');
     background-color: #00f; /* Azul para el río */
     opacity: 0.8; /* Un poco transparente */
 }

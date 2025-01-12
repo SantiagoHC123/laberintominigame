@@ -111,7 +111,7 @@ const params = new URLSearchParams(window.location.search);
 const personaje = params.get("personaje");
 
 // Elegir el modelo en función del personaje
-const playerSrc = personaje === "mujer" ? "/src/modelos/alune.glb" : "/src/modelos/aphelios.glb";
+const playerSrc = personaje === "mujer" ? "laberintominigame/src/modelos/alune.glb" : "laberintominigame/src/modelos/aphelios.glb";
 
 // Crear el modelo del jugador
 const player = document.createElement("model-viewer");
@@ -267,7 +267,7 @@ document.addEventListener("mouseup", () => {
 });
 
 // Paso 2: Añadir enemigos al laberinto
-const enemySrcs = ["/src/modelos/minion1.glb", "/src/modelos/minion2.glb","/src/modelos/raptor.glb","lobo.glb"];
+const enemySrcs = ["laberintominigame/src/modelos/minion1.glb", "laberintominigame/src/modelos/minion2.glb","laberintominigame/src/modelos/raptor.glb","laberintominigame/src/modelos/lobo.glb"];
 let enemies = [];
 
 // Crear enemigos en posiciones iniciales aleatorias
@@ -303,7 +303,7 @@ createEnemies();
 
 function createDragon() {
     const dragon = document.createElement("model-viewer");
-    dragon.src = "/src/modelos/dragon1.glb";
+    dragon.src = "laberintominigame/src/modelos/dragon1.glb";
     dragon.alt = "Dragon dragon";
     dragon.cameraControls = false;
     dragon.autoRotate = false;
@@ -315,6 +315,7 @@ function createDragon() {
     dragon.style.height = "120%";
     dragon.style.objectFit = "contain";
     dragon.style.position = "relative";
+    dragon.style.opacity = "1";
 
     dragon.classList.add("dragon"); // Asegúrate de añadir la clase "dragon"
 

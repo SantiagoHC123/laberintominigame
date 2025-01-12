@@ -12,17 +12,17 @@
         <p>Selecciona tu personaje para iniciar:</p>
         
         <button onclick="iniciarJuego('hombre')">
-            <img src="laberintominigame/src/imagenes/hombre.png" alt="Personaje Hombre" width="100">
+            <img src="/src/imagenes/hombre.png" alt="Personaje Hombre" width="100">
         </button>
                 
         <button onclick="iniciarJuego('mujer')" id="boton">
-            <img src="laberintominigame/src/imagenes/mujer.png" alt="Personaje Mujer" width="100">
+            <img src="/src/imagenes/mujer.png" alt="Personaje Mujer" width="100">
         </button>
     </div>
 
     <script>
         function iniciarJuego(personaje) {            
-            window.location.href = `laberintominigame/html/laberinto.html?personaje=${personaje}`;
+            window.location.href = `/html/laberinto.html?personaje=${personaje}`;
         }
     </script>
 </body>

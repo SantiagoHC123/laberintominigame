@@ -157,7 +157,6 @@ document.addEventListener("keydown", (event) => {
 });
 
 
-
 // Función para mover al jugador
 function movePlayer(event) {
     event.preventDefault(); // Evita el comportamiento predeterminado del navegador
@@ -181,21 +180,21 @@ function movePlayer(event) {
             break;
     }
 
-    // Comprobar si la nueva celda es una pared o río
+    // Verificar si la nueva celda contiene un enemigo o dragón
+    if (cells[newIndex].classList.contains("enemy") || cells[newIndex].classList.contains("dragon")) {
+        addNotification("¡Game Over! Un enemigo o el dragón te atrapó.");
+        showGameOverPopup();
+        clearInterval(enemyMovementInterval); // Detener el movimiento de enemigos
+        document.removeEventListener("keydown", movePlayer); // Desactivar control del jugador
+        return; // Detener la ejecución para que no se mueva el jugador
+    }
+
+    // Comprobar si la nueva celda es una pared
     const newX = newIndex % columns;
     const newY = Math.floor(newIndex / columns);
 
     if (maze[newY][newX] === 'wall') {
         return; // No permitir moverse a una pared
-    }
-
-    // Verificar si la nueva celda contiene un enemigo
-    if (cells[newIndex].classList.contains("enemy")) {
-        addNotification("¡Game Over! Un enemigo te atrapó.");
-        showGameOverPopup();
-        clearInterval(enemyMovementInterval); // Detener el movimiento de enemigos
-        document.removeEventListener("keydown", movePlayer); // Desactivar el control del jugador
-        return; // Detener la ejecución para que no se mueva el jugador
     }
 
     // Permitir cruzar el río si el poder está activo o si es un camino normal
@@ -216,6 +215,7 @@ function movePlayer(event) {
         showGanarPopup();
     }
 }
+
 
 function showGanarPopup() {
     const popup = document.getElementById('ganar-popup');
@@ -267,7 +267,7 @@ document.addEventListener("mouseup", () => {
 });
 
 // Paso 2: Añadir enemigos al laberinto
-const enemySrcs = ["/src/modelos/minion1.glb", "/src/modelos/minion2.glb","/src/modelos/raptor.glb","/src/modelos/lobo.glb"];
+const enemySrcs = ["/src/modelos/minion1.glb", "/src/modelos/minion2.glb","/src/modelos/raptor.glb","lobo.glb"];
 let enemies = [];
 
 // Crear enemigos en posiciones iniciales aleatorias
@@ -350,12 +350,22 @@ function moveDragon() {
 
     // Verificar que el movimiento sea válido (no salga fuera del mapa)
     if (nextPos >= 0 && nextPos < cells.length) {
+        // Verificar si el dragón ha alcanzado al jugador
+        if (nextPos === playerIndex) {
+            addNotification("¡Game Over! Un enemigo te atrapó.");
+            showGameOverPopup();  // Asegúrate de que esta función está bien definida
+            clearInterval(enemyMovementInterval); // Detener el movimiento de enemigos
+            document.removeEventListener("keydown", movePlayer); // Desactivar control del jugador
+            return; // Detener la ejecución para que el dragón no siga moviéndose
+        }
+
         // Mover el dragón
         cells[currentPos].removeChild(dragon);
         dragonObj.index = nextPos; // Actualizar la nueva posición en el objeto del dragón
         cells[nextPos].appendChild(dragon);
     }
 }
+
 // Crear el dragón
 createDragon();
 
